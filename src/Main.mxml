@@ -7,19 +7,52 @@
         private var controller:MainController;
 
         ]]></fx:Script>
-    <s:VGroup padding="10" width="100%">
-        <s:HGroup width="100%">
-            <s:Label text="Packages Listing" fontSize="16"/>
-            <s:Spacer width="100%"/>
-            <s:Button label="Clear" click="this.controller.clearCountAllPackages()"/>
-        </s:HGroup>
-        <s:List
-                dataProvider="{this.controller.listing}"
-                itemRenderer="com.accesso.skins.renders.PackageRender"
-                borderVisible="false"
-                click="this.controller.onItemSelectedEvent(event)"
-                percentWidth="100"
-        >
-        </s:List>
+    <s:VGroup width="100%" gap="10">
+        <s:Group width="100%">
+            <s:Rect height="100%" width="100%">
+                <s:fill>
+                    <s:SolidColor alpha="1.0" color="#e7e7e7"/>
+                </s:fill>
+            </s:Rect>
+            <s:VGroup width="100%" gap="10" padding="20">
+                <s:VGroup width="100%">
+                    <s:Label text="Filters" fontSize="16"/>
+                    <s:Line percentWidth="100">
+                        <s:stroke>
+                            <s:SolidColorStroke alpha="0.2" color="#a99ea9" weight="1" caps="square"/>
+                        </s:stroke>
+                    </s:Line>
+                </s:VGroup>
+                <s:HGroup width="100%" verticalAlign="bottom">
+                    <s:VGroup width="250" gap="5">
+                        <s:Label text="Search by ID" width="100%" fontWeight="bold"/>
+                        <s:HGroup width="100%" verticalAlign="middle">
+                            <s:TextInput id="searchTextInput" height="25" width="100%" prompt="Search Package" enter="this.controller.search(event.currentTarget.text, 'id')"/>
+                            <s:Button height="25" label="Search" click="this.controller.search(searchTextInput.text, 'id')"/>
+                        </s:HGroup>
+                    </s:VGroup>
+                    <s:Spacer width="100%"/>
+                    <s:Button label="Reset Counts" height="25" click="this.controller.resetButtonEvent()"/>
+                </s:HGroup>
+            </s:VGroup>
+        </s:Group>
+        <s:VGroup padding="20" width="100%" gap="15">
+            <s:VGroup width="100%">
+                <s:Label text="Packages Listing" fontSize="16"/>
+                <s:Line percentWidth="100">
+                    <s:stroke>
+                        <s:SolidColorStroke alpha="0.2" color="#a99ea9" weight="1" caps="square"/>
+                    </s:stroke>
+                </s:Line>
+            </s:VGroup>
+            <s:List
+                    useHandCursor="true"
+                    dataProvider="{this.controller.listing}"
+                    itemRenderer="com.accesso.skins.renders.PackageRender"
+                    borderVisible="false"
+                    click="this.controller.onItemSelectedEvent(event)"
+                    width="100%">
+            </s:List>
+        </s:VGroup>
     </s:VGroup>
 </s:WindowedApplication>

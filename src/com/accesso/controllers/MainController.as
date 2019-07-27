@@ -22,7 +22,7 @@ public class MainController extends Controller {
         }
     }
 
-    public function clearCountAllPackages():void {
+    public function resetButtonEvent():void {
         for each (var pac:Package in listing){
             pac.count = 0;
         }
