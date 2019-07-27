@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<packages>
+	<p id="1" name="Bronco Billy's Wild West Ride" price="5.50" />
+	<p id="2" name="Whippin' Wilde Log Ride" price="7.50" image="reservation.png" />
+	<p id="3" name="Haunted Hayride" price="5.50" image="time.gif" />
+	<p id="4" name="Tornado Roller Coaster" price="12" />
+	<p id="5" name="Puppet Pal's Puppet Show" price="6.25" image="reservation.png" />
+	<p id="6" name="The Fourth 'o July Bananza" price="20.50" image="smallCalendarIcon.gif" />
+	<p id="7" name="Chug-Along Choo Choo" price="3" />
+	<p id="8" name="Wild West Shootout Stunt Show" price="10" image="smallCalendarIcon.gif" />
+	<p id="9" name="Pony Ride" price="5.50" />
+	<p id="10" name="Unlimited Ride Armband" price="50" />
+</packages>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<s:ItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" autoDrawBackground="false" width="100%">
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="hovered"/>
+        <s:State name="down"/>
+        <s:State name="selected"/>
+    </s:states>
+    <s:Rect id="ItemRenderBackgroundRect" height="100%"  width="100%">
+        <s:fill>
+            <s:SolidColor id="itemRenderSolidColor" alpha="1.0" color="#FFFFFF" color.selected="#a6bacc"/>
+        </s:fill>
+    </s:Rect>
+    <s:VGroup width="100%">
+        <s:HGroup gap="5" width="100%" padding="3">
+            <s:BorderContainer height="15" width="15">
+                <s:layout>
+                    <s:VerticalLayout horizontalAlign="center" verticalAlign="middle"/>
+                </s:layout>
+                <s:Label text="{itemIndex + 1}"/>
+            </s:BorderContainer>
+            <s:HGroup width="100%" gap="12">
+                <s:VGroup width="40%">
+                    <s:Label text="Name" fontWeight="bold"/>
+                    <s:Label text="{data.name}" width="100%"/>
+                </s:VGroup>
+                <s:VGroup width="15%">
+                    <s:Label text="Price" fontWeight="bold"/>
+                    <s:Label text="{data.price}" width="100%"/>
+                </s:VGroup>
+                <s:VGroup width="15%">
+                    <s:Label text="Count" fontWeight="bold"/>
+                    <s:Label text="{data.count}" width="100%"/>
+                </s:VGroup>
+                <s:VGroup width="15%">
+                    <s:Image id="image" visible="{data.image != null}" source="assets/{data.image}" />
+                </s:VGroup>
+            </s:HGroup>
+        </s:HGroup>
+        <s:Line percentWidth="100">
+            <s:stroke>
+                <s:SolidColorStroke alpha="0.5" color="#a99ea9" weight="1" caps="square"/>
+            </s:stroke>
+        </s:Line>
+    </s:VGroup>
+</s:ItemRenderer>
