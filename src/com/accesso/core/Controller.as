@@ -5,6 +5,7 @@ import com.accesso.core.interfaces.IService;
 import flash.xml.XMLDocument;
 
 import mx.collections.ArrayCollection;
+import mx.controls.Alert;
 import mx.rpc.xml.SimpleXMLDecoder;
 
 public class Controller implements IController {
@@ -35,6 +36,21 @@ public class Controller implements IController {
                 listing.addItem(Mapper.fromObject(obj, entity));
             }
         })
+    }
+
+    public function search(value:String, property:String):void {
+        if (value == ""){
+            this.listing.filterFunction = null;
+            this.listing.refresh();
+        } else {
+            this.listing.filterFunction = function (item:Object):Boolean {
+                return item[property] == value;
+            };
+            this.listing.refresh();
+            if (this.listing.source.length != this.listing.length && this.listing.length == 0){
+                Alert.show("The item couldn't be found.")
+            }
+        }
     }
 }
 }
