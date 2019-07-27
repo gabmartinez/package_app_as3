@@ -1,9 +1,6 @@
 package com.accesso.core {
 
-import com.accesso.core.Mapper;
 import com.accesso.core.interfaces.IService;
-
-import mx.collections.ArrayCollection;
 
 import mx.rpc.events.FaultEvent;
 import mx.rpc.events.ResultEvent;
@@ -13,7 +10,6 @@ import spark.components.Alert;
 
 public class Service extends HTTPService implements IService {
 
-    protected var entityModel:Class;
     private var endpoint:String;
 
     public function Service(endpoint:String) {
