@@ -19,3 +19,4 @@ bin-release/
 out/
 *.iml
 .idea/
+.DS_Store
