@@ -6,20 +6,20 @@
         <s:State name="down"/>
         <s:State name="selected"/>
     </s:states>
-    <s:Rect height="100%"  width="100%">
+    <s:Rect height="100%" width="100%">
         <s:fill>
-            <s:SolidColor alpha="1.0" color="#FFFFFF" color.selected="#a6bacc"/>
+            <s:SolidColor alpha="1.0" color="#FFFFFF" color.selected="#eaeaea" color.hovered="#f7f7f7"/>
         </s:fill>
     </s:Rect>
     <s:VGroup width="100%">
-        <s:HGroup gap="5" width="100%" padding="5">
+        <s:HGroup padding="3" paddingBottom="0" gap="5" width="100%" verticalAlign="middle">
             <s:BorderContainer height="15" width="15">
                 <s:layout>
                     <s:VerticalLayout horizontalAlign="center" verticalAlign="middle"/>
                 </s:layout>
                 <s:Label text="{itemIndex + 1}"/>
             </s:BorderContainer>
-            <s:HGroup width="100%" gap="12">
+            <s:HGroup width="100%" gap="12" padding="5">
                 <s:VGroup width="40%">
                     <s:Label text="Name" fontWeight="bold" fontSize="10"/>
                     <s:Label text="{data.name}" width="100%"/>
